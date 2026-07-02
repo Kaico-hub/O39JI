@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>おミクじ</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            color: #373b3e;
+            font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+            background: #fffeec;
+        }
+
+        header {
+            padding: 24px;
+            color: #fffeec;
+            background: #137a7f;
+            text-align: center;
+        }
+
+        main {
+            width: min(720px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 56px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 24px;
+            color: #e12885;
+            font-size: clamp(2rem, 7vw, 3.25rem);
+        }
+
+        p {
+            margin: 0 auto 24px;
+            line-height: 1.8;
+        }
+
+        input[type="text"] {
+            width: min(360px, 100%);
+            margin-bottom: 24px;
+            padding: 12px 14px;
+            border: 2px solid #86cecb;
+            border-radius: 4px;
+            font: inherit;
+            background: #fff;
+        }
+
+        .omikuzi-button {
+            display: block;
+            width: min(300px, 82vw);
+            height: auto;
+            margin: 0 auto;
+            border: 0;
+            cursor: pointer;
+            transition: transform 0.15s ease, filter 0.15s ease;
+        }
+
+        .omikuzi-button:hover,
+        .omikuzi-button:focus {
+            transform: translateY(3px);
+            filter: brightness(1.04);
+        }
+    </style>
+</head>
+<body>
+    <header>おミクじ</header>
+
+    <main>
+        <h1>おミクじコーナー!!</h1>
+        <p>
+            あなたの今日の運勢をミクが占ってあげるよ!<br>
+            名前を入力して、下のミクちゃんをクリック！
+        </p>
+
+        <input type="text" id="NameText" placeholder="名前を入力してね" autocomplete="name">
+        <input class="omikuzi-button" type="image" onclick="buttonClicked()" src="omikuzi_hako.jpg" alt="おミクじを引く">
+    </main>
+
+    <script>
+        function buttonClicked() {
+            var myname = document.getElementById("NameText").value.trim();
+
+            if (myname === "") {
+                alert("あなたの名前を入力してください");
+                return;
+            }
+
+            window.location.href = "omikuzi_animation.html?name=" + encodeURIComponent(myname);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>おミクじ</title>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            background: #fffeec;
+        }
+
+        img {
+            max-width: min(100%, 720px);
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="omikuzi_animation.gif" alt="おミクじ抽選中">
+
+    <script>
+        setTimeout(function () {
+            window.location.href = "omikuzi_result.html" + window.location.search;
+        }, 3000);
+    </script>
+</body>
+</html>

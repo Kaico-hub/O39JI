@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>おミクじ 結果</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            color: #373b3e;
+            font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+            background: #fffeec;
+        }
+
+        header {
+            padding: 24px;
+            color: #fffeec;
+            background: #137a7f;
+            text-align: center;
+        }
+
+        main {
+            width: min(720px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 56px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 28px;
+            color: #e12885;
+            font-size: clamp(2rem, 7vw, 3rem);
+        }
+
+        #Picture img {
+            width: min(420px, 100%);
+            height: auto;
+        }
+
+        #Comment {
+            margin: 24px 0;
+            color: #e12885;
+            font-size: clamp(1.4rem, 5vw, 2rem);
+            font-weight: 700;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .retry {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 4px;
+            color: #fffeec;
+            text-decoration: none;
+            background: #137a7f;
+        }
+
+        .retry:hover,
+        .retry:focus {
+            background: #0f686d;
+        }
+    </style>
+</head>
+<body>
+    <header>おミクじ</header>
+
+    <main>
+        <h1>結果は...</h1>
+        <div id="Picture"></div>
+        <div id="Comment"></div>
+        <div class="actions">
+            <a class="retry" href="index.html">もう一度引く</a>
+            <a id="TweetButton"
+               href="https://twitter.com/share"
+               class="twitter-share-button"
+               data-hashtags="ミクさんすこすこアイランド,おミクじ">Tweet</a>
+        </div>
+    </main>
+
+    <script src="omikuzi_makeresults.js"></script>
+    <script>
+        makeresults(Math.random());
+    </script>
+    <script>
+        !function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? "http" : "https";
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + "://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");
+    </script>
+</body>
+</html>

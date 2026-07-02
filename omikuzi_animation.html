@@ -13,6 +13,25 @@
             background: #fffeec;
         }
 
+        .hub-link {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            z-index: 1;
+            padding: 8px 10px;
+            color: #fffeec;
+            text-decoration: none;
+            font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+            font-weight: 700;
+            background: #137a7f;
+            border-radius: 4px;
+        }
+
+        .hub-link:hover,
+        .hub-link:focus {
+            text-decoration: underline;
+        }
+
         img {
             max-width: min(100%, 720px);
             height: auto;
@@ -20,6 +39,7 @@
     </style>
 </head>
 <body>
+    <a class="hub-link" href="../">KaicoHubにもどる</a>
     <img src="omikuzi_animation.gif" alt="おミクじ抽選中">
 
     <script>

@@ -18,10 +18,27 @@
         }
 
         header {
+            position: relative;
             padding: 24px;
             color: #fffeec;
             background: #137a7f;
             text-align: center;
+        }
+
+        .hub-link {
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            transform: translateY(-50%);
+            color: #fffeec;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .hub-link:hover,
+        .hub-link:focus {
+            text-decoration: underline;
         }
 
         main {
@@ -73,7 +90,10 @@
     </style>
 </head>
 <body>
-    <header>おミクじ</header>
+    <header>
+        <a class="hub-link" href="../">KaicoHubにもどる</a>
+        おミクじ
+    </header>
 
     <main>
         <h1>結果は...</h1>
